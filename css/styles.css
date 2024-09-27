@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+@import url('https://fonts.cdnfonts.com/css/gunplay');
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -40,6 +40,7 @@ header {
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #3498db;
+    font-family: 'Gunplay', sans-serif;
 }
 
 header .logo-container {
