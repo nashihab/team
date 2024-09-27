@@ -6,129 +6,136 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
     color: #333;
-}
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    overflow-y: auto; /* Allow vertical scrolling */
+    background-color: #f0f0f0; /* Light gray background */
 }
 
 #particles-js {
-    position: absolute; /* Ensure particles are behind other elements */
+    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0; /* Set z-index to 0 so it stays in the background */
+    z-index: -1; /* Send to the back */
 }
 
-header {
-    background-color: #4A90E2; /* Header background color */
-    padding: 20px 0;
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1); /* Fully opaque */
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Show above everything else */
+}
+
+.header {
+    background: #e9e9e9; /* White background for header */
     text-align: center;
+    padding: 20px 0;
     position: relative;
+    z-index: 5; /* Ensure it's above particles */
+    border-bottom: 2px solid #e0e0e0; /* Underline for header */
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-    z-index: 1; /* Bring header content to the front */
-}
-
-.logo {
-    width: 50px; /* Adjust logo size */
-    margin-bottom: 10px; /* Space below logo */
+.header .logo {
+    max-width: 100px; /* Set a max width for the logo */
+    margin-bottom: 15px;
 }
 
 h1 {
-    color: #fff; /* Header text color */
-    font-size: 2.5em; /* Larger font size */
+    margin: 0;
+    font-size: 2rem;
 }
 
 .team-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 80px 20px;
-    z-index: 1; /* Bring team cards to the front */
-    position: relative; /* Positioning context for children */
+    padding: 20px;
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    margin-bottom: 80px; /* Space below the team cards */
 }
 
 .team-card {
-    background: rgba(255, 255, 255, 0.9); /* Glassy effect */
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 15px;
-    padding: 20px;
-    width: calc(25% - 40px); /* Adjust width for 4 cards in a row */
-    transition: transform 0.3s;
-    max-width: 300px; /* Set a max width for cards */
-    display: flex; /* Center content */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
+    padding: 15px;
+    width: calc(30% - 30px); /* Adjust card width for three per row */
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    min-height: 300px; /* Set a minimum height for cards */
 }
 
 .team-card img {
-    width: 100%; /* Adjust image size to fill card */
+    width: 80%; /* Adjust image size */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
-    margin-bottom: 15px; /* Space between image and text */
+    margin-bottom: 10px; /* Add margin below image */
+}
+
+.team-card h2 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem; /* Adjusted font size */
+    text-align: center; /* Center text */
+}
+
+.team-card p {
+    margin: 5px 0;
+    font-size: 1rem; /* Adjusted font size */
+    text-align: center; /* Center text */
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Space above social links */
+    margin-top: 10px;
 }
 
 .social-links a {
-    margin: 0 10px;
+    margin: 0 5px;
     text-decoration: none;
-    color: #4A90E2; /* Social link color */
-    font-weight: bold;
+    color: #333;
+    font-size: 1.5rem; /* Slightly larger icons */
+}
+
+/* Added margin below social links */
+.team-card .social-links {
+    margin-bottom: 15px; /* Space below social links */
 }
 
 footer {
-    background-color: #4A90E2; /* Footer background color */
+    background: #343a40; /* Dark background for footer */
     color: white;
     text-align: center;
-    padding: 20px 0;
-    position: relative; /* Relative positioning */
-    z-index: 1; /* Bring footer to the front */
+    padding: 10px 0;
+    position: relative;
+    z-index: 5; /* Ensure it's above particles */
 }
 
-.footer-logo {
-    width: 50px; /* Adjust footer logo size */
-    margin-bottom: 10px; /* Space below footer logo */
+footer .footer-logo {
+    max-width: 50px; /* Set logo size to 50px */
+    margin: 10px 0; /* Space above and below logo */
 }
 
-/* Responsive Styles */
+footer p {
+    margin: 0;
+}
+
+/* Media Queries */
 @media (max-width: 1024px) {
     .team-card {
-        width: calc(33.33% - 40px); /* Adjust for 3 cards in a row */
+        width: calc(45% - 30px); /* Adjust for two per row on tablets */
     }
 }
 
 @media (max-width: 768px) {
     .team-card {
-        width: calc(50% - 40px); /* Adjust for 2 cards in a row */
-    }
-}
-
-@media (max-width: 480px) {
-    .team-card {
-        width: 100%; /* Stack cards on top of each other */
-        margin: 10px 0; /* Space between stacked cards */
+        width: calc(100% - 30px); /* One card per row on smaller screens */
     }
 }
