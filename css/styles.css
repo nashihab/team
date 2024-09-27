@@ -1,0 +1,105 @@
+/* Particle Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensures it's behind the content */
+}
+
+/* Main content should appear above particles */
+header, #team {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Text color */
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    color: #333; /* Darker text color */
+}
+
+.header-border {
+    width: 80%;
+    border-top: 2px solid #333; /* Dark border color */
+    margin: 20px auto; /* Centered */
+}
+
+#team {
+    padding: 20px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto; /* Center align */
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.8); /* Light and bright */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    backdrop-filter: blur(10px); /* Glassy effect */
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-card h2 {
+    font-size: 1.5rem;
+    color: #333; /* Dark color for the text */
+}
+
+.team-card .position {
+    color: #888; /* Softer color for position text */
+}
+
+.team-card .bio {
+    color: #666; /* Light gray for bio */
+}
+
+.team-card .social-links a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* White background for preloader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* High z-index to cover everything while loading */
+}
+
+#preloader img {
+    width: 100px;
+}
+
+body.loaded #preloader {
+    display: none; /* Hide preloader once page is loaded */
+}
