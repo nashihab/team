@@ -125,20 +125,29 @@ footer {
     align-items: center;
 }
 
+.social-links {
+    display: flex; /* Use flexbox to align items in a row */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px;
+}
+
 .social-links a {
-    display: inline-block;
+    flex: 1; /* Make buttons take equal space */
+    text-align: center;
+    min-width: 120px; /* Set a minimum width for buttons */
     padding: 10px 20px;
-    margin: 5px;
     text-decoration: none;
     color: white;
     background-color: #3498db;
     border-radius: 25px;
     border: 2px solid transparent;
     font-size: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease, background-size 0.3s;
     background-image: linear-gradient(45deg, #3498db, #2980b9);
     background-size: 200% 200%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
 }
 
 .social-links a:hover {
@@ -156,4 +165,17 @@ footer {
 
 .social-links a:hover i {
     transform: rotate(20deg); /* Icon rotates slightly */
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+    .social-links {
+        justify-content: space-evenly; /* Distribute buttons evenly on small screens */
+    }
+
+    .social-links a {
+        flex: none; /* Remove equal space for small screens */
+        min-width: auto; /* Allow smaller widths */
+        padding: 8px 15px; /* Adjust padding to fit mobile */
+    }
 }
