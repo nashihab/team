@@ -19,14 +19,14 @@ body {
     height: 100%;
     background-color: white;
     z-index: 9999;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
 .loader-gif {
-    width: 62px; /* Adjust the size of your GIF as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 62px; 
+    height: auto;
 }
 
 
@@ -73,8 +73,8 @@ main {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
-    width: 300px; /* Card width */
-    min-height: 300px; /* Minimum height */
+    width: 300px;
+    min-height: 300px;
     position: relative;
     transition: transform 0.2s;
 }
